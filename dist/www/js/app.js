@@ -430,17 +430,24 @@
                 params: {
                   autoplay: 0
                 }
-              } // {
-              //     reg: /^.*twitch.tv\/videos\/(\d+)($|\/|\b)/i,
-              //     url: 'https://player.twitch.tv/?autoplay=false&video=v$1',
-              //     params: {
-              //         autoplay: false
-              //     },
-              //     callback: function () {
-              //         return 'https://player.twitch.tv/?video=v$1';
-              //     }
-              // }
-              ]
+              }, //     <iframe
+              //         allowtransparency="true"
+              //         title="Wistia video player"
+              //         allowFullscreen
+              //         frameborder="0"
+              //         scrolling="no"
+              //         class="wistia_embed"
+              //         name="wistia_embed"
+              //         src="https://fast.wistia.net/embed/iframe/4cbgg1027m">
+              //     </iframe>
+              {
+                reg: /^.*(?:wistia.net\/embed)\/iframe\/([A-Za-z0-9]+)/i,
+                url: 'https://fast.wistia.net/embed/iframe/$1',
+                params: {
+                  autoplay: false,
+                  allowtransparency: true
+                }
+              }]
             };
           },
           watch: {
@@ -451,6 +458,7 @@
           methods: {
             parse: function parse() {
               if (this.src) {
+                // console.log(this.src)
                 for (var i = 0; i < this.videos.length; i++) {
                   var v = this.videos[i];
                   var m = v.reg.exec(this.src);
@@ -518,7 +526,7 @@
           }, [_c("iframe", {
             staticClass: "embed-responsive-item",
             attrs: {
-              sandbox: "allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation",
+              sandbox: "allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation",
               allowfullscreen: "",
               src: _vm.url
             }
@@ -865,22 +873,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     change: function change() {
@@ -957,10 +949,20 @@ var render = function() {
           _c("video-embed", { attrs: { src: "https://coub.com/embed/22eztb" } })
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _vm._v(" Wistia\n            "),
+          _c("video-embed", {
+            attrs: { src: "https://fast.wistia.net/embed/iframe/4cbgg1027m" }
+          })
+        ],
+        1
       )
-    ]),
-    _vm._v(" "),
-    _vm._m(2)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -993,57 +995,6 @@ var staticRenderFns = [
             }
           },
           [_vm._v("\bSocial\n                    Network for Developers")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", [
-      _c("p", [
-        _c(
-          "a",
-          {
-            staticClass: "social-icon",
-            attrs: {
-              href: "https://github.com/nasa8x/v-video-embed",
-              target: "_blank"
-            }
-          },
-          [_c("i", { staticClass: "fa-3x fab fa-github-square" })]
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("Developed under the "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://opensource.org/licenses/MIT",
-              target: "_blank"
-            }
-          },
-          [_vm._v("MIT License")]
-        ),
-        _c("br"),
-        _vm._v("\n            Made Love by Nasa8x"),
-        _c("br"),
-        _vm._v(" "),
-        _c("strong", [_vm._v("Donate")]),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "a",
-          { attrs: { href: "http://vrl.to/ec5cfbae", target: "_blank" } },
-          [_c("img", { attrs: { src: "https://i.imgur.com/z0p6RvA.png" } })]
-        ),
-        _c(
-          "a",
-          { attrs: { href: "http://vrl.to/ec5cfbae", target: "_blank" } },
-          [_c("img", { attrs: { src: "https://i.imgur.com/bEUNBGz.png" } })]
         )
       ])
     ])

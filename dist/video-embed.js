@@ -163,17 +163,24 @@ __webpack_require__.r(__webpack_exports__);
         params: {
           autoplay: 0
         }
-      } // {
-      //     reg: /^.*twitch.tv\/videos\/(\d+)($|\/|\b)/i,
-      //     url: 'https://player.twitch.tv/?autoplay=false&video=v$1',
-      //     params: {
-      //         autoplay: false
-      //     },
-      //     callback: function () {
-      //         return 'https://player.twitch.tv/?video=v$1';
-      //     }
-      // }
-      ]
+      }, //     <iframe
+      //         allowtransparency="true"
+      //         title="Wistia video player"
+      //         allowFullscreen
+      //         frameborder="0"
+      //         scrolling="no"
+      //         class="wistia_embed"
+      //         name="wistia_embed"
+      //         src="https://fast.wistia.net/embed/iframe/4cbgg1027m">
+      //     </iframe>
+      {
+        reg: /^.*(?:wistia.net\/embed)\/iframe\/([A-Za-z0-9]+)/i,
+        url: 'https://fast.wistia.net/embed/iframe/$1',
+        params: {
+          autoplay: false,
+          allowtransparency: true
+        }
+      }]
     };
   },
   watch: {
@@ -184,6 +191,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     parse: function parse() {
       if (this.src) {
+        // console.log(this.src)
         for (var i = 0; i < this.videos.length; i++) {
           var v = this.videos[i];
           var m = v.reg.exec(this.src);
@@ -233,7 +241,7 @@ var render = function() {
           staticClass: "embed-responsive-item",
           attrs: {
             sandbox:
-              "allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation",
+              "allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation",
             allowfullscreen: "",
             src: _vm.url
           }

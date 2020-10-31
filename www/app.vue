@@ -39,30 +39,14 @@
                 <video-embed src="https://coub.com/embed/22eztb"></video-embed>
             </div>
 
+            <div class="form-group"> Wistia
+                <video-embed src="https://fast.wistia.net/embed/iframe/4cbgg1027m"></video-embed>
+            </div>
+
 
 
         </div>
 
-
-        <footer>
-
-            <p>
-                <a class="social-icon" href="https://github.com/nasa8x/v-video-embed" target="_blank">
-                    <i class="fa-3x fab fa-github-square"></i>
-                </a>
-
-            </p>
-
-            <p>Developed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a><br>
-                Made Love by Nasa8x<br>
-                <strong>Donate</strong><br>
-                <a href="http://vrl.to/ec5cfbae" target="_blank">
-                    <img src="https://i.imgur.com/z0p6RvA.png"></a><a href="http://vrl.to/ec5cfbae" target="_blank"><img
-                        src="https://i.imgur.com/bEUNBGz.png"></a>
-            </p>
-
-
-        </footer>
 
     </div>
 </template>
