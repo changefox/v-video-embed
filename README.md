@@ -64,6 +64,9 @@ Vue.use(Embed);
 # coub
 <video-embed src="https://coub.com/embed/22eztb"></video-embed>
 
+# wistia
+<video-embed src="https://fast.wistia.net/embed/iframe/lhr14k41n2"></video-embed>
+
 ```
 
 ```html

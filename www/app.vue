@@ -40,7 +40,7 @@
             </div>
 
             <div class="form-group"> Wistia
-                <video-embed src="https://fast.wistia.net/embed/iframe/4cbgg1027m"></video-embed>
+                <video-embed src="https://fast.wistia.net/embed/iframe/lhr14k41n2"></video-embed>
             </div>
 
 

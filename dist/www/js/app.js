@@ -957,7 +957,7 @@ var render = function() {
         [
           _vm._v(" Wistia\n            "),
           _c("video-embed", {
-            attrs: { src: "https://fast.wistia.net/embed/iframe/4cbgg1027m" }
+            attrs: { src: "https://fast.wistia.net/embed/iframe/lhr14k41n2" }
           })
         ],
         1
