@@ -78,7 +78,7 @@
 
                     {
                          
-                        reg: /^.*(?:wistia.net\/embed)\/iframe\/([A-Za-z0-9]+)/i,
+                        reg: /^.*(?:wistia.net\/embed)\/iframe\/([A-Za-z0-9]+)([^#\&\?]*).*/i,
                         url: 'https://fast.wistia.net/embed/iframe/$1',
                         params: {
                            autoplay: false,
@@ -105,8 +105,6 @@
             parse() {
 
                 if (this.src) {
-
-                    // console.log(this.src)
 
                     for (let i = 0; i < this.videos.length; i++) {
                         const v = this.videos[i];
