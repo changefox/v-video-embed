@@ -76,17 +76,6 @@
                         }
                     },
 
-//     <iframe
-//         allowtransparency="true"
-//         title="Wistia video player"
-//         allowFullscreen
-//         frameborder="0"
-//         scrolling="no"
-//         class="wistia_embed"
-//         name="wistia_embed"
-//         src="https://fast.wistia.net/embed/iframe/4cbgg1027m">
-//     </iframe>
-
                     {
                          
                         reg: /^.*(?:wistia.net\/embed)\/iframe\/([A-Za-z0-9]+)/i,
